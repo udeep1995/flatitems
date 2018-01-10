@@ -1,7 +1,9 @@
 const express = require('express');
 const bp = require('body-parser');
+const fs = require('fs');
+const path = require('path');
 const app = express();
-var items = [];
+
 app.use(express.static('./public'));
 app.use(bp.urlencoded({
   extended: true
@@ -20,14 +22,21 @@ app.get('/', function(req, res) {
   res.send(index.html);
 });
 app.get('/getitems', function(req, res) {
-  res.send(items);
+  fs.readFile('data/items.json', function(err, data) {
+    res.send(JSON.parse(data));
+  });
 })
 
 app.post('/additems', function(req, res) {
-  items.push(req.body);
+  fs.readFile('data/items.json', function(err, data) {
+    let currentItems = JSON.parse(data);
+    let newItems = req.body;
+    currentItems.push(newItems);
+    fs.writeFile('data/items.json', JSON.stringify(currentItems), function(err) {})
+  });
 })
-app.get('/clearitems',function(req,res){
-  items = [];
+app.get('/clearitems', function(req, res) {
+  fs.writeFile('data/items.json', JSON.stringify([]), function(err) {})
 })
 app.get('/test', function(req, res) {
   res.send('TEST ROUTE WORKING');

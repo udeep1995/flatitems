@@ -11,22 +11,15 @@ $(document).ready(function() {
   function currentBasket(data) {
     if (data.length === 0)
       return;
-
     $('.date').html(data[0].date);
-
-
     for (var i = 0; i < data.length; i++) {
       $li = $('<ol/>');
       $li.html(data[i].Items);
-
       $liR = $('<ol/>');
       $liR.html(data[i].RequiredBy);
-
       $('.item').append($li);
       $('.RequiredBy').append($liR);
     }
-
-
   }
 
   function addItems() {
