@@ -1,7 +1,7 @@
-#FlatItems SITE
+# FlatItems SITE
 
-##PURPOSE
+## PURPOSE
 FlatItems is used to log items required by flat-mates.
 
-##USING
+## USING
 clone/download code and run server using ``` npm start ``` 
