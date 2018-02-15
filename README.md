@@ -4,4 +4,4 @@
 FlatItems is used to log items required by flat-mates.
 
 ## USING
-clone/download code and run server using ``` npm start ``` 
+clone/download code and run server using ``` npm start ``` and open [localhost] https://localhost:3000
