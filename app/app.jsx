@@ -3,6 +3,7 @@ var ReactDOM = require('react-dom');
 var {Route,Router,IndexRoute,hashHistory} = require('react-router');
 var Main = require('Main');
 var FlatApp = require('FlatApp');
+var About = require('About');
 // import './../playground/firebase/index';
 //Load foundation
 require('style-loader!css-loader!foundation-sites/dist/foundation.min.css');
@@ -11,8 +12,9 @@ $(document).foundation();
 require('!style-loader!css-loader!applicationStyles');
 ReactDOM.render(
   <Router history = {hashHistory}>
-      <Route path="/" component = {FlatApp}>
-
-      </Route>
+    <Route path="/" component = {Main}>
+        <IndexRoute component = {FlatApp}></IndexRoute>
+        <Route path= 'about'  component= {About}></Route>
+    </Route>
   </Router>
   , document.getElementById('app'));
