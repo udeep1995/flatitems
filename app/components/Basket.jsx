@@ -8,9 +8,14 @@ var Basket = React.createClass({
     var {
       items
     } = this.props;
-    return (<div>
-      <BasketList onDelItem={this.handleDelItem} items={items}></BasketList>
-    </div>)
+    return (
+      <div>
+          <h3>Current Basket Items</h3>
+          <div className="container basket-box">
+            <BasketList onDelItem={this.handleDelItem} items={items}></BasketList>
+          </div>
+      </div>
+  )
   }
 });
 module.exports = Basket;
