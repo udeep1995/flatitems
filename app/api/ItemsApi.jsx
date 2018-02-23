@@ -33,5 +33,19 @@ module.exports = {
             resolve(currOrderId);
           })
         })
+    },
+    getLastOrderId: function() {
+      return new Promise ((resolve,reject) => {
+        firebaseRef.child('orders').once('value').then((snapshot) => {
+          var orders = snapshot.val() || {};
+           var lastOrderId = -1; // sentinal value
+             Object.keys(orders).forEach((orderId) => {
+              if(orders[orderId].isOrdered === true) {
+                lastOrderId = orderId;
+              }
+              });
+            resolve(lastOrderId);
+          })
+        })
     }
 }

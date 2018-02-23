@@ -55,6 +55,9 @@ plugins:[
       Basket: 'Basket.jsx',
       BasketList: 'BasketList.jsx',
       BasketItem: 'BasketItem.jsx',
+      LastOrder: 'LastOrder.jsx',
+      LastOrderList: 'LastOrderList.jsx',
+      LastOrderItem: 'LastOrderItem.jsx',
       index: 'index',
       ItemsApi: 'ItemsApi',
       applicationStyles:'app.css'

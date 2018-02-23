@@ -4,6 +4,7 @@ var {Route,Router,IndexRoute,hashHistory} = require('react-router');
 var Main = require('Main');
 var FlatApp = require('FlatApp');
 var About = require('About');
+var LastOrder = require('LastOrder');
 // import './../playground/firebase/index';
 //Load foundation
 require('style-loader!css-loader!foundation-sites/dist/foundation.min.css');
@@ -14,7 +15,8 @@ ReactDOM.render(
   <Router history = {hashHistory}>
     <Route path="/" component = {Main}>
         <IndexRoute component = {FlatApp}></IndexRoute>
-        <Route path= 'about'  component= {About}></Route>
+        <Route path= 'about' component= {About}></Route>
+        <Route path= 'last_order' component= {LastOrder}></Route>
     </Route>
   </Router>
   , document.getElementById('app'));

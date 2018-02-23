@@ -1,5 +1,6 @@
 var React = require ('react');
 var {Link,IndexLink} = require('react-router');
+
 var Nav = React.createClass({
   render:function (){
     return (
@@ -13,6 +14,9 @@ var Nav = React.createClass({
                     </li>
                     <li>
                           <Link to='about' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>About</Link>
+                    </li>
+                    <li>
+                          <Link to='last_order' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>Last Order</Link>
                     </li>
                 </ul>
             </div>
