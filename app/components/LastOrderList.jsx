@@ -8,9 +8,11 @@ var LastOrderList = React.createClass({
         return <LastOrderItem key={item.id} item={item}></LastOrderItem>
       })
     }
-    return (<div>
-      {renderItems()}
-    </div>)
+    return (
+      <div style={{marginTop: '3%'}}>
+          {renderItems()}
+      </div>
+          )
   }
 });
 module.exports = LastOrderList;

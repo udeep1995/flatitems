@@ -1,8 +1,11 @@
 var React = require('react');
+var moment = require('moment');
+import firebase, {firebaseRef} from 'index';
+
 var Basket = require('Basket');
 var AddItems = require('AddItems');
 var ItemsApi = require('ItemsApi');
-import firebase, {firebaseRef} from 'index';
+
 var FlatApp = React.createClass({
   getInitialState: function() {
     return {isLoaded: false, orderId: undefined, items: []}
@@ -12,7 +15,8 @@ var FlatApp = React.createClass({
     if (!this.state.orderId) {
       var newOrder = {
         isOrdered: false,
-        items: []
+        items: [],
+        timestamp: new Date()
       }
       orderRef = firebaseRef.child('orders').push(newOrder);
       this.setState({orderId: orderRef.key})
@@ -32,12 +36,16 @@ var FlatApp = React.createClass({
     }
   },
   handleAddItems: function(item) {
-
     var orderRef = this.handleNewOrder();
     var currOrder = orderRef
       ? orderRef.key
       : this.state.orderId;
     var itemRef = firebaseRef.child(`orders/${currOrder}/items`).push(item);
+
+    var timestampRef = firebaseRef.child(`orders/timestamp`).update({
+      timestamp: moment().unix()
+    });
+
     this.setState({
       items: [
         ...this.state.items, {
@@ -65,7 +73,7 @@ var FlatApp = React.createClass({
           this.setState({orderId: orderId});
           ItemsApi.getItems(this.state.orderId).then((fromResolve) => {
             this.setState({isLoaded: true, items: fromResolve})
-          })
+          });
         }
       });
     }
