@@ -5,15 +5,29 @@ var BasketItem = React.createClass({
     this.props.onDelItem(id);
   },
   render: function(){
-    var {item} = this.props
+    var {item} = this.props;
     return (
       <div className="row">
           <div className="callout alert" data-closable>
-              <span className="small-12 columns">{item.name}</span>
-              <span className="small-12 columns">{item.reqBy}</span>
-              <button onClick={this.handleDelItem.bind(this,item.id)} className="close-button" type="button">
-              <span aria-hidden="true">&times;</span>
-            </button>
+              <div>
+                  <span className="small-12 columns">
+                      <div className="small-6 columns">
+                          {item.name}
+                      </div>
+                      <div className="small-2 columns">
+                          {item.amt}
+                      </div>
+                      <div className="small-4 columns">
+                          {item.quant}
+                      </div>
+                  </span>
+                  <span className="small-12 columns">Required by - {item.reqBy}</span>
+              </div>
+              <div>
+                  <button onClick={this.handleDelItem.bind(this,item.id)} className="close-button" type="button">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
           </div>
       </div>
     )
