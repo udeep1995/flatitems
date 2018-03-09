@@ -10,13 +10,16 @@ var Nav = React.createClass({
                     <li className="menu-text text-decoration">Flat Items
                     </li>
                     <li>
-                            <IndexLink to='/' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>Home</IndexLink>
+                        <IndexLink to='/' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>Home</IndexLink>
                     </li>
                     <li>
                           <Link to='about' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>About</Link>
                     </li>
                     <li>
                           <Link to='last_order' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>Last Order</Link>
+                    </li>
+                    <li>
+                          <Link to='checkout' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>Check this out</Link>
                     </li>
                 </ul>
             </div>

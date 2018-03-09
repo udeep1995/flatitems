@@ -5,6 +5,7 @@ var Main = require('Main');
 var FlatApp = require('FlatApp');
 var About = require('About');
 var LastOrder = require('LastOrder');
+var MyOtherApps = require('MyOtherApps');
 // import './../playground/firebase/index';
 //Load foundation
 require('style-loader!css-loader!foundation-sites/dist/foundation.min.css');
@@ -17,6 +18,7 @@ ReactDOM.render(
         <IndexRoute component = {FlatApp}></IndexRoute>
         <Route path= 'about' component= {About}></Route>
         <Route path= 'last_order' component= {LastOrder}></Route>
+        <Route path= 'checkout' component = {MyOtherApps}></Route>
     </Route>
   </Router>
   , document.getElementById('app'));
