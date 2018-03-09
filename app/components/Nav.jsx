@@ -10,7 +10,7 @@ var Nav = React.createClass({
                     <li className="menu-text text-decoration">Flat Items
                     </li>
                     <li>
-                          <IndexLink to='/' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>Home</IndexLink>
+                            <IndexLink to='/' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>Home</IndexLink>
                     </li>
                     <li>
                           <Link to='about' activeClassName ="active" activeStyle = {{fontWeight : 'bold' }}>About</Link>

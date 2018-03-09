@@ -27,7 +27,7 @@ var AddItems = React.createClass({
 
           <legend>Add More Items
               <div className="row">
-              <div className="small-8 columns">
+              <div className="small-4 columns">
                 <div className="small-3 columns">
                   <label className="right inline">Name</label>
                 </div>
@@ -38,7 +38,7 @@ var AddItems = React.createClass({
             </div>
 
             <div className="row">
-              <div className="small-5 columns">
+              <div className="small-4 columns">
                 <div className="small-3 columns">
                   <label className="right inline">Items</label>
                 </div>
@@ -54,9 +54,9 @@ var AddItems = React.createClass({
                     </div>
                 </div>
             
-              <div className="small-3 columns">
+              <div className="small-4 columns">
                   <label>
-                    <select id="quant" ref="quant">
+                    <select className="small-12 columns" id="quant" ref="quant">
                         <option defaultValue value="grams">g
                         </option>
                         <option value="kilograms">Kg

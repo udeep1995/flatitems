@@ -15,8 +15,7 @@ var FlatApp = React.createClass({
     if (!this.state.orderId) {
       var newOrder = {
         isOrdered: false,
-        items: [],
-        timestamp: new Date()
+        items: []
       }
       orderRef = firebaseRef.child('orders').push(newOrder);
       this.setState({orderId: orderRef.key})
@@ -36,13 +35,12 @@ var FlatApp = React.createClass({
     }
   },
   handleAddItems: function(item) {
+    
     var orderRef = this.handleNewOrder();
-    var currOrder = orderRef
-      ? orderRef.key
-      : this.state.orderId;
+    var currOrder = orderRef ? orderRef.key : this.state.orderId;
     var itemRef = firebaseRef.child(`orders/${currOrder}/items`).push(item);
 
-    var timestampRef = firebaseRef.child(`orders/timestamp`).update({
+    var timestampRef = firebaseRef.child(`orders/${currOrder}`).update({
       timestamp: moment().unix()
     });
 
