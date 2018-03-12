@@ -1,5 +1,15 @@
 import firebase,{firebaseRef} from 'index';
 module.exports = {
+    getOrders: function () {
+        return new Promise((resolve, reject) => {
+          firebaseRef.child(`orders`).once(`value`).then((snapshot) => {
+            var orders = snapshot.val() || {};
+            var pastOrders = [];
+            pastOrders = Object.keys(orders);
+             resolve(pastOrders);
+          });
+        });
+    },
     getDate: function(orderId) {
       return new Promise((resolve, reject) => {
         firebaseRef.child(`orders/${orderId}`).once('value').then((snapshot) => {

@@ -58,6 +58,8 @@ plugins:[
       LastOrder: 'LastOrder.jsx',
       LastOrderList: 'LastOrderList.jsx',
       LastOrderItem: 'LastOrderItem.jsx',
+      OrdersList: 'OrdersList.jsx',
+      OrderItem: 'OrderItem.jsx',
       MyOtherApps: 'MyOtherApps',
       index: 'index',
       ItemsApi: 'ItemsApi',

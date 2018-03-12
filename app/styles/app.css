@@ -8,3 +8,9 @@
 .text-decoration{
   text-decoration:'none'
 }
+.highlight{
+  background-color: lightblue;
+}
+.orderInfo {
+  -webkit-transition: height 2s ease-in
+}
